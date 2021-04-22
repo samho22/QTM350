@@ -27,7 +27,7 @@ To use the examples we will present for working with Amazong Translate, you will
 
 To add it, in the IAM role Summary page (pictured in the screenshot below), click the blue "Attach policies" button. In the search bar, type TranslateFullAccess, select it by ticking the empty white box next to the name when it appears, and then click the blue "Attach policy" button.
 
-![picture](https://drive.google.com/uc?export=view&id=12v8Zc3cv2uDL30wBKCS37pDjX5cbDDG8)
+![picture](https://github.com/samho22/QTM350/blob/505d792808ac4436b05ea1ecc0f14f4f40d6a609/photos/Screen%20Shot%202021-04-22%20at%203.22.52%20PM.png)
 
 
 To use the translate service in practical situations within buisness or personal needs, we will be writing python code and using the AWS service given to us. Therefore, we need to import boto3 in order to integrate your Python application, library, or script with AWS services (the translate service we will be using). Also, import json so we store the translated text into json files.
@@ -78,7 +78,7 @@ with open('Amazon_Translate.json', 'w') as fp:
     json.dump(Amazon_Translate, fp)
 ```
 
-![picture](https://drive.google.com/uc?export=view&id=1PBoQPLSt9otOKTOCH3eMPsLnRxeVHHAc)
+![picture](https://github.com/samho22/QTM350/blob/505d792808ac4436b05ea1ecc0f14f4f40d6a609/photos/Screen%20Shot%202021-04-22%20at%203.23.16%20PM.png)
 
 Using boto3, we can call the Translate API. We are using the translate-text function in order to translate the text. This will save a new json file with the translated text. I suggest naming the new json file as yourfilename_translated, so you know it is the new json with the translations.
 
@@ -91,7 +91,7 @@ Using boto3, we can call the Translate API. We are using the translate-text func
             --cli-input-json file://Amazon_Translate.json > Amazon_Translate_Translated.json
 ```
 
-![picture](https://drive.google.com/uc?export=view&id=1AmA63Qah09TS3aktztIAOb52qusRc1aR)
+![picture](https://github.com/samho22/QTM350/blob/505d792808ac4436b05ea1ecc0f14f4f40d6a609/photos/Screen%20Shot%202021-04-22%20at%203.23.23%20PM.png)
 
 
 If you want to the store the json files you've made after translating into a bucket, this code is an easy way to store them. The bucket name should be an existing bucket. Option 2 will go more into depth about how to create a bucket. 
@@ -115,15 +115,15 @@ To translate these four phrases in a more efficient manner, we used the batch tr
 Log into your AWS account and go to the S3 service. From there, create a new bucket for this task. To do this, click Create Bucket in the top right-hand corner and choose the permissions that you want. This bucket will contain all of the phrases, texts, documents, etc. that you would like to translate. 
 
 
-![picture](https://drive.google.com/uc?export=view&id=1XEunnctgK6zSFRgjaK4G9iztkPu3gMrf)
+![picture](https://github.com/samho22/QTM350/blob/505d792808ac4436b05ea1ecc0f14f4f40d6a609/photos/Screen%20Shot%202021-04-22%20at%203.23.37%20PM.png)
 
 For batch translation service to work, you must create a new folder in the bucket. To do this, click "Create folder" in the top right-hand corner. We created a new folder called "Phrases".
 
-![picture](https://drive.google.com/uc?export=view&id=1XdDZh89ViHhmGmN-zkCZYQzuhUPDxLFn)
+![picture](https://github.com/samho22/QTM350/blob/505d792808ac4436b05ea1ecc0f14f4f40d6a609/photos/Screen%20Shot%202021-04-22%20at%203.23.44%20PM.png)
 
 In this folder, drag and drop your files with the phrases you would like to translate. Keep in mind that all of the files within the folder should be the same format. You should find all of the files you have uploaded where it says "Objects". We uploaded four text files with the four phrases that we would like to see translated.
 
-![picture](https://drive.google.com/uc?export=view&id=1GNIepJVDA2htqzI8Qgn4xZI6vvKlE1Aa)
+![picture](https://github.com/samho22/QTM350/blob/505d792808ac4436b05ea1ecc0f14f4f40d6a609/photos/Screen%20Shot%202021-04-22%20at%203.23.52%20PM.png)
 
 #### Second Bucket: Phrase Outputs
 Now that we have a bucket with everything we would like to translate, we need to create a bucket to store all of the translations. Create a new bucket and choose the permissions that you want. Again, you must create a new folder in the bucket. In our case, because we would like all of the phrases to be translated into eight different languages, we created eight different folders. This bucket will contain all of the translated phrases, texts, documents, etc.
