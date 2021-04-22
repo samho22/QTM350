@@ -129,37 +129,37 @@ In this folder, drag and drop your files with the phrases you would like to tran
 Now that we have a bucket with everything we would like to translate, we need to create a bucket to store all of the translations. Create a new bucket and choose the permissions that you want. Again, you must create a new folder in the bucket. In our case, because we would like all of the phrases to be translated into eight different languages, we created eight different folders. This bucket will contain all of the translated phrases, texts, documents, etc.
 
 
-![picture](https://drive.google.com/uc?export=view&id=1asLQIwPvqYa7z8uSYzp_GUKGfKadtZLE)
+![picture](https://github.com/samho22/QTM350/blob/ea4f3125029d4befbfd8821c6937a681c4e041d1/photos/Screen%20Shot%202021-04-22%20at%203.30.43%20PM.png)
 
 **Step Two: Using Amazon Translate**
 
 After you have created your two buckets, folders, and stored all of your files, you are ready to begin translating the files. First, search for the Amazon Translate service and go to its portal. Click on "Batch translation", which you can find on the left-hand side. Once you are there, your screen should show you Translation jobs.
 
-![picture](https://drive.google.com/uc?export=view&id=1KwFkdQrbSgBrpEWk22qOa4gyLRJD7_uj)
+![picture](https://github.com/samho22/QTM350/blob/ea4f3125029d4befbfd8821c6937a681c4e041d1/photos/Screen%20Shot%202021-04-22%20at%203.30.49%20PM.png)
 
 Click on the "Create job" button in the top right corner. This will lead you to a screen to create a translation job.
 
 In the Job settings section, you will need to input a name for your transcription job and choose the source language and target language for your translations. Source language is the language your text(s) currently is and target language is the language you wish to translate the text(s) to. Our source language was English (en) and we wanted to translate our texts to Korean (ko).
 
-![picture](https://drive.google.com/uc?export=view&id=1Vac15R4aE3aiZ5aT0_VsmhbqpTeRboJM)
+![picture](https://github.com/samho22/QTM350/blob/ea4f3125029d4befbfd8821c6937a681c4e041d1/photos/Screen%20Shot%202021-04-22%20at%203.30.57%20PM.png)
 
 In the "Input data" section, you will need to input the S3 location of the bucket and folder with the original phrases you would like translated. This is the first bucket and folder we created above. You can click "Select folder" to find the S3 location you are looking for. Then, you must indicate what format your files are.
 
-![picture](https://drive.google.com/uc?export=view&id=1RidNsEaXkzVETY8xLxx0MIeSdif94a8V)
+![picture](https://github.com/samho22/QTM350/blob/ea4f3125029d4befbfd8821c6937a681c4e041d1/photos/Screen%20Shot%202021-04-22%20at%203.31.04%20PM.png)
 
 In the Output data section, you will need to input the S3 location of the bucket and folder where you would like to store the new translations. This is the second bucket and folder(s) we have created. Again, you can click Select folder to find the S3 location you are looking for.
 
-![picture](https://drive.google.com/uc?export=view&id=1QDN3LUYMI027LjPrjoRRhlAko8ssyzt1)
+![picture](https://github.com/samho22/QTM350/blob/ea4f3125029d4befbfd8821c6937a681c4e041d1/photos/Screen%20Shot%202021-04-22%20at%203.31.12%20PM.png)
 
 In our case, we do not use the Customization section but can learn more about this section on [AWS's walkthrough on batch translations](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html). This section allows you to use custom terminology with your translation requests.
 
 In the Access permissions section, you can either use an existing IAM role or create an IAM role. For our first translation job, we chose to create an IAM role giving them access to input and output S3 buckets, which we gave the role name "Translate". For the rest of our translation jobs, we used an existing IAM role which was the one that we had just created in our first translation job. For us, that role was called "AmazonTranslateServiceRole-Translate".
 
-![picture](https://drive.google.com/uc?export=view&id=1sbjxtbiMkCxLHoY7M2KHutKA9yvczt98)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.33.56%20PM.png)
 
 After you have put in all of this information, click "Create job" at the bottom of the page. The translation job will now start working. Once it is complete, it will say completed in green in the status section.
 
-![picture](https://drive.google.com/uc?export=view&id=1wNwQrLbbfgxfjjqrSxLdXIf16hC5Ht5d)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.34.21%20PM.png)
 
 As you can see from the image above, we made eight different translation jobs. Each job translated the same phrases from our first bucket (in English) to our eight different languages we wanted to analyze: Spanish (Mexico), Portuguese, German, French, Hindi, Tagalog, Simplified Mandarin, and Korean. They were then stored in their respective folder in the second bucket we created. 
 
@@ -167,19 +167,19 @@ As you can see from the image above, we made eight different translation jobs. E
 Once the job is complete, you can find the translations in the bucket in which you indicated as the output location. You can do this by clicking on the job and then clicking the output file location in the bottom right corner, as in the image below. This will take you directly to the folder with all the new translated text files.
 
 
-![picture](https://drive.google.com/uc?export=view&id=1pg5V6ldpv8dPa6x4DprpkRbh1rsEGEb1)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.34.27%20PM.png)
 
-![picture](https://drive.google.com/uc?export=view&id=10ksg8JKwsJQQB9zq6O60aqWtBjsS7v1H)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.34.34%20PM.png)
 
 You can also go directly to the S3 bucket. Once you click on the folder you sent the data to, you will see a new folder and a temp file. Click on the folder file to see all of the new text files with the new translations. The folder you are clicking on is the same folder from the image above.
 
-![picture](https://drive.google.com/uc?export=view&id=1N7wVrbupWxhDHVShtaWT-WdSJGMhHw3H)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.34.40%20PM.png)
 
 By clicking on the text file, you can see all of it's properties. To see what is in this text file, click Object actions in the top right corner. Then you can open or download the text.
 
-![picture](https://drive.google.com/uc?export=view&id=13-rO3NmiKh8J3cobtxHBXQFh1yBLT9YJ)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.34.46%20PM.png)
 
-![picture](https://drive.google.com/uc?export=view&id=1qYXgH8IbxXvQGZB32umi0Pw1TSqECjVq)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/photos/Screen%20Shot%202021-04-22%20at%203.34.52%20PM.png)
 
 ## Analysis of the Translations
 
@@ -194,7 +194,7 @@ For more information, check out our [blog](https://qtm350finalprojectblog.s3.ama
 ## Architecture Overview 
 
 
-![picture](https://drive.google.com/uc?export=view&id=1qQAQcmMN5gjYiOe2jfMaoVR2yq9Zx5pC)
+![picture](https://github.com/samho22/QTM350/blob/ea526253ff543a3a7bd331ee1740f1bea38a7e55/Amazon%20Translate%20Architecture%20Diagram.jpg)
 
 We first took our text of formal and slang phrases to be translated and uploaded the file into our project S3 bucket. Then, we used the Amazon Translate service to get a translation of all of the phrases in our 8 languages (Hindi, Tagalog, Mandarin, Korean, German, Portugese, French, Spanish). Next, the translated texts were put into a new S3 bucket. Then, we checked the accuracy of the translation by comparing them to a native speaker's translation. Lastly, created a data frame of the accuracy scores for each language and created data visualizations.
 
