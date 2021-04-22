@@ -1,4 +1,4 @@
-![picture](https://drive.google.com/uc?export=view&id=1BDtKaH1yf03LRXYVldJIXuYVEUjDsUp1)
+![picture](https://github.com/samho22/QTM350/blob/539e01e2544560a771c3265c088b334d2c5d13fa/photos/Screen%20Shot%202021-04-22%20at%202.28.12%20PM.png)
 
 # **Analyzing the Accuracy of Amazon Translate Service using Different Languages**
 
