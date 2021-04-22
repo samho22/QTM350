@@ -20,7 +20,7 @@ In order to use this API within Sagemaker, we will need to update the Role we ha
 
 Under the heading "Permissions and encryption" in your desired notebook instance, click the link to the IAM role ARN.
 
-![picture](https://drive.google.com/uc?export=view&id=1eiTQtYPQSI2XNjUkyijksah-QYb8Hv0g)
+![picture](https://github.com/samho22/QTM350/blob/8da5b18bfdae27720d58d5519f3d6dce6ed3e705/photos/Screen%20Shot%202021-04-22%20at%202.28.22%20PM.png)
 
 ### Adding policies
 To use the examples we will present for working with Amazong Translate, you will need to add TranslateFullAccess permissions. This permission is required to work with the AWS translate function. 
